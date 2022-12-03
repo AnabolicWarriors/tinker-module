@@ -17,6 +17,7 @@ add_executable(${PROJECT_NAME}
     3rdparty/Serial/lib/serialib.cpp
 
     src/argument/parser.cpp
+    src/serial/serial.cpp
     main.cpp
 )
 
