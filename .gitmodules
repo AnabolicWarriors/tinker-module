@@ -1,3 +1,6 @@
 [submodule "3rdparty/Serial"]
 	path = 3rdparty/Serial
 	url = https://github.com/imabot2/serialib
+[submodule "3rdparty/args"]
+	path = 3rdparty/args
+	url = https://github.com/taywee/args

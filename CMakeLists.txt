@@ -8,10 +8,13 @@ project(${PROJECT_NAME})
 # set(CXX_STANDARD 14)
 # Serial Port Linrary
 include_directories(${CMAKE_SOURCE_DIR}/3rdparty/Serial/lib/)
+include_directories(${CMAKE_SOURCE_DIR}/3rdparty/args/)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(${PROJECT_NAME}
     3rdparty/Serial/lib/serialib.cpp
 
+    src/argument/parser.cpp
     main.cpp
 )
 
