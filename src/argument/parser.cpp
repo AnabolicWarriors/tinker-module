@@ -41,6 +41,10 @@ std::pair<bool, option> parser(int argc, char** argv) {
         std::cerr << parser;
         return std::make_pair(false, option{});
     }
+    std::cout << "Argument Result : \n";
+    std::cout << "COM : " << args::get(com) << "\n";
+    std::cout << "Baudrate : " << args::get(baudrate) << "\n\n";
+    
     return std::make_pair(true, option {
         args::get(com),
         args::get(baudrate),

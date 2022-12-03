@@ -10,26 +10,13 @@ windows:
 linux: 
 	cd build && \
 	cmake .. -G \
-		"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release && \
-	make
+		Ninja -DCMAKE_BUILD_TYPE=Release && \
+	ninja
 
-build: linux
+build: init linux
 
 	
 init: 
-	echo $(OS)
-	ifeq ($(OS),Windows_NT)
-		echo "!!"
-		if not exist build\ ( \
-    		echo "!!!" \
-		) else ( \
-			echo "@@@" \
-		)
-	else
-		echo "@@"
-
-		if ! [ -d "build" ]; then \
-			mkdir build; \
-		fi
-	endif
-	
+	if ! [ -d "build" ]; then \
+		mkdir build; \
+	fi
