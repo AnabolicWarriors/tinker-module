@@ -19,7 +19,7 @@ public:
     void read();
     int write(std::string);
 
-    const event_handler* event() const;
+    event_handler* const event();
 
 };
 

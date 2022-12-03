@@ -75,7 +75,7 @@ int serial::write(std::string data) {
     return this->lib.writeString(data.c_str());
 }
 
-const event_handler* serial::event() const { 
+event_handler* const serial::event() { 
     return &this->handler;
 }
 
