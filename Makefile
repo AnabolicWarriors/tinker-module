@@ -20,3 +20,7 @@ init:
 	if ! [ -d "build" ]; then \
 		mkdir build; \
 	fi
+
+run: build
+	./build/chacha -c "/dev/tty.usbserial-210" -b 19200
+	

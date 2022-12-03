@@ -11,6 +11,7 @@ add_compile_options(-std=c++17)
 # Serial Port Linrary
 include_directories(${CMAKE_SOURCE_DIR}/3rdparty/Serial/lib/)
 include_directories(${CMAKE_SOURCE_DIR}/3rdparty/args/)
+include_directories(${CMAKE_SOURCE_DIR}/3rdparty/spdlog/include)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(${PROJECT_NAME}

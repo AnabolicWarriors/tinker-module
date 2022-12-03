@@ -7,8 +7,9 @@
 #include "event/user_access.h"
 
 struct event_handler { 
-    std::function<std::string()> raw;
-    std::function<user_access()> user_access;
+    std::function<void(std::string)> raw;
+    std::function<void()> error;
+    std::function<void(user_access)> user_access;
 };
 
 #endif // MAIN_SERIAL_EVENT_H
