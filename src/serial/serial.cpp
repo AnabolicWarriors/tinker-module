@@ -26,6 +26,7 @@ char serial::open(int baudrate, std::string com) {
 
     return this->lib.openDevice(com.c_str(), baudrate);
 }
+
 void serial::close() { 
     this->lib.closeDevice();
 }
@@ -66,7 +67,7 @@ void serial::read() {
         result.user_id = spt[2];
         this->handler.user_access(result);
     }else if (spt.size() != 3){ 
-        spdlog::warn("user_access : size not matching");
+        spdlog::warn("user_access : [{}] size not matching", data);
     }else if (!this->handler.user_access){ 
         spdlog::warn("user_access : handler user access not join");
     }
