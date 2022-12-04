@@ -6,7 +6,8 @@
 
 class realvnc { 
 private:
-    std::shared_ptr<TinyProcessLib::Process> process;
+    std::shared_ptr<TinyProcessLib::Process> vnc_process;
+    std::shared_ptr<TinyProcessLib::Process> dialog_process;
     
 public:
     realvnc();
