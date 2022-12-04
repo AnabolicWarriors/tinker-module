@@ -19,15 +19,20 @@ int main(int argc, char** argv) {
 
     spdlog::info("Serial Port 관련 처리");
     serial ser;
+
     ser.event()->user_access = [](user_access data) { 
         spdlog::info("{}, {}, {}", data.failure, data.user_name, data.user_id);
     };
+    ser.event()->raw = [](string data) { 
+        spdlog::info("RAW : {}", data);
+    };
+    
     spdlog::info("  - Callback event initialize");
     ser.open(op.baudrate, op.com);
     spdlog::info("open success");
 
-    // ser.write("i am chacha and wow !!! text");
-    
+    ser.write("i am chacha and wow !!! text");
+    // s
     while (true) { 
         ser.read();
     }
