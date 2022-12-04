@@ -22,5 +22,5 @@ init:
 	fi
 
 run: build
-	./build/chacha -c "/dev/tty.usbserial-210" -b 19200
+	./build/chacha -c "/dev/tty.usbserial-210" -b 38400
 	

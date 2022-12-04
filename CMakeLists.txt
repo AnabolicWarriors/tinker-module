@@ -17,7 +17,10 @@ endif()
 include_directories(${CMAKE_SOURCE_DIR}/3rdparty/Serial/lib/)
 include_directories(${CMAKE_SOURCE_DIR}/3rdparty/args/)
 include_directories(${CMAKE_SOURCE_DIR}/3rdparty/spdlog/include)
+include_directories(${CMAKE_SOURCE_DIR}/3rdparty/process/)
 include_directories(${CMAKE_SOURCE_DIR}/include)
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/3rdparty/process/)
 
 add_executable(${PROJECT_NAME}
     3rdparty/Serial/lib/serialib.cpp
@@ -26,6 +29,8 @@ add_executable(${PROJECT_NAME}
     src/serial/serial.cpp
     main.cpp
 )
+
+target_link_libraries(${PROJECT_NAME} tiny-process-library)
 
 # install target and libraries
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/bin)
