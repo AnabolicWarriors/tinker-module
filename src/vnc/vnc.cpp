@@ -2,7 +2,7 @@
 #include <string>
 
 #include <realvnc/realvnc.h>
-
+using namespace TinyProcessLib;
 std::string get_cmd() { 
     std::string cmd = "/usr/bin/vncviewer";
     cmd += " 113.198.230.10:32752";
@@ -21,8 +21,9 @@ bool realvnc::start() {
     if (this->process != nullptr) { 
         return false;
     }
+    std::string cmd = get_cmd();
 
-    this->process = &TinyProcessLib::Process(get_cmd().c_str());
+    this->process = std::make_shared<TinyProcessLib::Process>(cmd);
     return true;
 }
 
@@ -35,5 +36,9 @@ bool realvnc::stop() {
     return true;
 }
 bool realvnc::is_run() const {
-
+    return this->process != nullptr;
 }
+
+
+// $true@chacha@chacha#
+// $false@chacha@chacha#

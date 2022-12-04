@@ -27,6 +27,7 @@ add_executable(${PROJECT_NAME}
 
     src/argument/parser.cpp
     src/serial/serial.cpp
+    src/vnc/vnc.cpp
     main.cpp
 )
 

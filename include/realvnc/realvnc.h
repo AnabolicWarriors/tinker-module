@@ -1,11 +1,12 @@
 #ifndef MAIN_REALVNC_REALVNC_H
 #define MAIN_REALVNC_REALVNC_H
 
+#include <memory>
 #include <process.hpp>
 
 class realvnc { 
 private:
-    TinyProcessLib::Process* process;
+    std::shared_ptr<TinyProcessLib::Process> process;
     
 public:
     realvnc();
