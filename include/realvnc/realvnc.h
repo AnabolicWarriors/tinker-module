@@ -1,14 +1,14 @@
-#ifndef MAIN_ARGUMENT_OPTION_H
-#define MAIN_ARGUMENT_OPTION_H
+#ifndef MAIN_REALVNC_REALVNC_H
+#define MAIN_REALVNC_REALVNC_H
 
 #include <process.hpp>
 
 class realvnc { 
 private:
-    bool run;
     TinyProcessLib::Process* process;
     
 public:
+    realvnc();
     bool start();
     bool stop();
 
@@ -16,4 +16,4 @@ public:
 };
 
 
-#endif // MAIN_ARGUMENT_OPTION_H
+#endif // MAIN_REALVNC_REALVNC_H

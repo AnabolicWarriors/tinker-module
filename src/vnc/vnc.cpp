@@ -14,22 +14,25 @@ std::string get_cmd() {
     return cmd;
 }
 
+realvnc::realvnc() { 
+    this->process = nullptr;
+}
 bool realvnc::start() {
-    if (this->run) { 
+    if (this->process != nullptr) { 
         return false;
     }
-    this->run = true;
 
     this->process = &TinyProcessLib::Process(get_cmd().c_str());
     return true;
 }
 
 bool realvnc::stop() {
-    if (!this->run) { 
+    if (this->process == nullptr) { 
         return false;
     }
     this->process->kill(true);
     this->process = nullptr;
+    return true;
 }
 bool realvnc::is_run() const {
 
