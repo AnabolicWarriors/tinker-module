@@ -8,3 +8,5 @@
     -Quality=Low \
     -SecurityNotificationTimeout=0
 ```
+
+git clone --recursive https://github.com/AnabolicWarriors/tinker-module
