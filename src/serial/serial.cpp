@@ -71,6 +71,7 @@ void serial::read() {
         spdlog::warn("user_access : handler user access not join");
     }
 }
+
 int serial::write(std::string data) { 
     return this->lib.writeString(data.c_str());
 }
