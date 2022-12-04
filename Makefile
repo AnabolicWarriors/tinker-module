@@ -22,5 +22,4 @@ init:
 	fi
 
 run: build
-	./build/chacha -c "/dev/tty.usbserial-210" -b 38400
-	
+	./build/chacha -c "/dev/ttyUSB0" -b 38400

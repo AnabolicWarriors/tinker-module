@@ -26,6 +26,9 @@ int main(int argc, char** argv) {
     ser.event()->raw = [](string data) { 
         spdlog::info("RAW : {}", data);
     };
+    ser.event()->error = []() { 
+        spdlog::info("ERROR Not Receive");
+    };
     
     spdlog::info("  - Callback event initialize");
     ser.open(op.baudrate, op.com);

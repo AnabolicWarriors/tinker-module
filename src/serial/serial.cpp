@@ -42,6 +42,7 @@ void serial::read() {
     if (data.length() == 0) { 
         if (this->handler.error) { 
             this->handler.error();
+            return;
         }
     }
 
