@@ -20,7 +20,8 @@ int main(int argc, char** argv) {
     spdlog::info("  - com : {}", op.com);
 
     realvnc vnc;
-    
+    vnc.stop();
+      
     spdlog::info("Serial Port 관련 처리");
     serial ser;
 
