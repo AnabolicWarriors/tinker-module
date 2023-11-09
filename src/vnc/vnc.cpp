@@ -4,9 +4,9 @@
 #include <realvnc/realvnc.h>
 using namespace TinyProcessLib;
 
-std::string get_vnc_cmd() { 
-    std::string cmd = "/usr/bin/vncviewer";
-    cmd += " 113.198.230.10:32752";
+std::string get_vnc_cmd(std::string ip, int port) { 
+    std::string cmd = "/usr/bin/vncviewer ";
+    cmd += " " + ip + ":" + std::to_string(port);
     cmd += " -FullScreen=1";
     cmd += " -HideCloseAlert=1";
     cmd += " -Scaling=Fit";
@@ -24,15 +24,17 @@ std::string get_error_cmd() {
     return cmd;
 }
 
-realvnc::realvnc() { 
+realvnc::realvnc(std::string ip, int port) { 
     this->vnc_process = nullptr;
     this->dialog_process = nullptr;
+    this->ip = ip;
+    this->port = port;
 }
 bool realvnc::start() {
     if (this->vnc_process != nullptr) { 
         return false;
     }
-    auto cmd = get_vnc_cmd();
+    auto cmd = get_vnc_cmd(this->ip, this->port);
 
     if (dialog_process != nullptr){ 
         this->dialog_process->kill(true);

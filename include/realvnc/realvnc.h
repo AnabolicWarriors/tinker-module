@@ -8,9 +8,11 @@ class realvnc {
 private:
     std::shared_ptr<TinyProcessLib::Process> vnc_process;
     std::shared_ptr<TinyProcessLib::Process> dialog_process;
+    std::string ip;
+    int port;
     
 public:
-    realvnc();
+    realvnc(std::string ip, int port);
     bool start();
     bool stop();
 
